@@ -15,4 +15,8 @@
 
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.get('/', ({ request }) => {
+  return { greeting: 'Hello world in JSON' }
+})
+// first route
+Route.get('users', 'UserController.index')
